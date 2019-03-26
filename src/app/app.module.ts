@@ -26,8 +26,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: FootballDataInterceptor, multi: true },
