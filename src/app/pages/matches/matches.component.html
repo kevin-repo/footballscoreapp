@@ -1,2 +1,14 @@
-<app-match-list [matches] = matches>
+<!-- TODO Add selection of competition day -->
+<p *ngIf="competition$ | async as competition;">
+    <span>Journée {{competition.currentSeason.currentMatchday}}</span>
+</p>
+
+<mat-form-field *ngIf="competition$ | async as competition;">
+    <mat-select [(ngModel)]="selectedValue" (selectionChange)="selected($event)" placeholder="Journée">
+        <mat-option [value]="competition.currentSeason.currentMatchday">{{competition.currentSeason.currentMatchday}}</mat-option>
+        <mat-option [value]="2">2</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<app-match-list [matches]="matches">
 </app-match-list>
